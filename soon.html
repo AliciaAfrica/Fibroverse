@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Living With Strength - Coming Soon</title>
+
+    <!-- Google Font Quicksand-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <!-- Load Tailwind CSS for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Define a custom, soothing palette */
+        :root {
+            /* Kept for context, but button colors are now custom below */
+            --primary-green: #10B981; 
+            --primary-dark: #059669; 
+            --bg-light: #F3F2EC;
+            --text-main: #1F2937;
+
+            /* Custom button colors */
+            --kdp-button-bg: #C5A992;
+            --kdp-button-hover: #b09581; /* Slightly darker for interaction */
+            --kdp-button-text: #fff;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--bg-light);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Modern input focus style */
+        .modern-input:focus {
+            border-color: var(--primary-green) !important;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.4) !important;
+        }
+
+        /* Subtle vertical gradient for the call-to-action block */
+        .cta-gradient {
+            background-image: linear-gradient(to bottom, #ffffff, #f7fcfb);
+        }
+
+        /* Custom style for the new button color */
+        .kdp-launch-button {
+            background-color: var(--kdp-button-bg);
+            color: var(--kdp-button-text);
+        }
+
+        .kdp-launch-button:hover {
+            background-color: var(--kdp-button-hover);
+        }
+
+        /* Custom animation for the icon/title */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="w-full max-w-lg">
+        
+        <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-gray-100 text-center">
+            
+            <!-- Book Icon/Logo Section: Updated to a Lightbulb (Symbol of Guidance/Hope) -->
+            <div class="mb-6 fade-in" style="animation-delay: 0s;">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-yellow-500 transform rotate-2" viewBox="0 0 24 24" fill="currentColor">
+                    <!-- Stylized Lightbulb Icon -->
+                    <path d="M12 2a8 8 0 0 0-8 8c0 3.313 1.33 6.29 3.5 8.428V22h9v-3.572C18.67 16.29 20 13.313 20 10a8 8 0 0 0-8-8zM7 10a5 5 0 1 1 10 0v2H7v-2zm7 9H10v-1h4v1z"/>
+                </svg>
+            </div>
+
+            <!-- Title & Message -->
+            <h1 class="text-xl font-semibold text-gray-600 mb-4 fade-in" style="animation-delay: 0.2s;">
+                Coming Soon!
+            </h1>
+            <h1 class="text-4xl font-extrabold text-gray-900 mb-6 fade-in" style="animation-delay: 0.4s;">
+                Living With Strength
+            </h1>
+            <h3 class="text-xl font-semibold text-gray-600 mb-6 fade-in" style="animation-delay: 0.4s;">
+                A Memoir of Hope, Faith, and Finding the Courage to Keep Moving.
+            </h3>
+            
+            <!-- REWRITTEN PARAGRAPH: Direct, clear launch status and call-to-action -->
+            <p class="text-gray-600 mb-8 fade-in italic" style="animation-delay: 0.6s; line-height: 2;">
+                We are so excited to share this book with you!<br>It will be launching on **Amazon KDP very soon**.<br>In the meantime, please enter your email below and we will personally notify you the moment it goes live!
+            </p>
+
+            <!-- Email Capture Block: Updated CTA Headline -->
+            <div class="p-6 rounded-xl cta-gradient shadow-inner fade-in" style="animation-delay: 0.8s;">
+                <p class="text-lg font-bold text-text-main mb-4">
+                    **Be Anchored in Hope: Join the Waitlist**
+                </p>
+                
+                <!-- ADDED ID FOR JAVASCRIPT TARGETING -->
+                <form id="waitlist-form" action="https://formspree.io/f/mkgqzybo" method="POST" class="space-y-4">
+                    <input 
+                        type="email" 
+                        name="email"
+                        id="waitlist-email" 
+                        placeholder="Enter your best email address" 
+                        required
+                        class="modern-input w-full p-3 border-2 border-gray-300 rounded-xl transition duration-300 focus:outline-none focus:ring-0 text-center"
+                    >
+                    <!-- APPLIED NEW CUSTOM BUTTON CLASS -->
+                    <button 
+                        type="submit" 
+                        id="submit-button"
+                        class="w-full kdp-launch-button font-bold py-3 rounded-xl transition duration-300 shadow-lg transform hover:scale-[1.01] active:scale-100"
+                    >
+                        Notify Me the Moment it Launches!
+                    </button>
+                </form>
+
+                <!-- SUCCESS MESSAGE (CRUCIAL FIX: THIS ELEMENT WAS MISSING!) -->
+                <p id="success-message" class="hidden mt-4 font-semibold text-primary-dark">
+                    Thank you! We've added you to the waitlist and will notify you when the book is live!
+                </p>
+            </div>
+
+            <!-- Author & Footer -->
+            <footer class="mt-10 text-sm text-gray-400 fade-in" style="animation-delay: 1s;">
+                By Alicia Africa | Coming soon to Amazon KDP
+            </footer>
+        </div>
+    </main>
+
+    <!-- JavaScript for JSON Form Submission -->
+    <script>
+        const form = document.getElementById('waitlist-form');
+        const emailInput = document.getElementById('waitlist-email');
+        const submitButton = document.getElementById('submit-button');
+        const successMessage = document.getElementById('success-message');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault(); // Stop the default HTML form submission
+
+            const formURL = form.action;
+            const emailValue = emailInput.value;
+            
+            // Disable button to prevent double clicks
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            // Construct the JSON payload
+            const data = {
+                email: emailValue,
+                source: "KDP Coming Soon Page" // Optional: helps identify where the lead came from
+            };
+
+            try {
+                const response = await fetch(formURL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json', // CRITICAL: This tells Formspree we are sending JSON
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    // Success!
+                    form.reset();
+                    form.classList.add('hidden'); // Hide the form after submission
+                    successMessage.classList.remove('hidden'); // Show success message
+                } else {
+                    // Handle non-200 responses (e.g., validation errors from Formspree)
+                    console.error('Formspree submission error:', response.status);
+                    
+                    // Display temporary error message on the button
+                    submitButton.textContent = 'Error! Check console.';
+                    submitButton.classList.add('bg-red-500'); // Optional: visual feedback for error
+
+                    setTimeout(() => {
+                        submitButton.textContent = 'Notify Me the Moment it Launches!';
+                        submitButton.disabled = false;
+                        submitButton.classList.remove('bg-red-500');
+                    }, 2000);
+                }
+            } catch (error) {
+                console.error('Network or Fetch Error:', error);
+                
+                // Display temporary network error message on the button
+                submitButton.textContent = 'Network Error! Try again.';
+                submitButton.classList.add('bg-red-500');
+
+                setTimeout(() => {
+                    submitButton.textContent = 'Notify Me the Moment it Launches!';
+                    submitButton.disabled = false;
+                    submitButton.classList.remove('bg-red-500');
+                }, 2000);
+
+            } finally {
+                // The re-enable logic is handled within the try/catch/error blocks via setTimeout.
+                // If it reached success, the form is hidden.
+            }
+        });
+    </script>
+
+</body>
+</html>
