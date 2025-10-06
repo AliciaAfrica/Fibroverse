@@ -2540,3 +2540,142 @@ footer#footer {
     margin-right: 0;
   }
 }
+
+/* --- Responsiveness ---- */
+
+/* Responsive adjustments for Fibroverse site */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+
+/* Header & nav */
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+
+header .logo {
+  flex: 1 1 auto;
+}
+
+header .menu {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+header .menu a {
+  text-decoration: none;
+  color: inherit;
+  padding: 0.5rem 1rem;
+}
+
+/* Hero / banner */
+.hero-banner img {
+  width: 100%;
+  height: auto;
+  max-height: 450px;
+  object-fit: cover;
+}
+
+/* Platform icons row */
+.platforms {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.platforms img {
+  max-width: 100px;
+  height: auto;
+  flex: 1 1 auto;
+}
+
+/* Sections spacing */
+section {
+  padding: 2rem 0;
+}
+
+section h2, section h3 {
+  margin-bottom: 1rem;
+}
+
+/* Booking / mentorship form */
+.booking-section {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.booking-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.booking-form .full-width {
+  grid-column: 1 / -1;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+.booking-form button {
+  grid-column: 1 / -1;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* For small widths, stack form items */
+@media (max-width: 768px) {
+  .booking-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile / small tweaks */
+@media (max-width: 600px) {
+  header {
+    text-align: center;
+  }
+  header nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  header .menu {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  section {
+    padding: 1.5rem 0.5rem;
+  }
+}
